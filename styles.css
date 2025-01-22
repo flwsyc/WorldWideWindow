@@ -1,0 +1,295 @@
+html,body{
+    height: 105%;
+    margin: 0;
+    background-image: url("img/skyGIF.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    font-size: 8vw;
+    z-index: 1;
+    text-align: center;
+    color: #00FF1E;
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    filter: blur(0.5px);
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.highlight {
+    border: 4px solid #00FF1E;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    line-height: 65%;
+    border-radius: 40px;
+}
+
+div.main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+div.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 82vw;
+}
+
+div.column{
+    height: 100vh;
+    width:fit-content;
+    margin: 2%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+div.img{
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+div.img p{
+    margin: 0px;
+    padding: 2px;
+    margin-top: 2%;
+    font-family:"DM Mono", cursive;
+    text-align: center;
+    background-color: white;
+    color: #00FF1E;
+    border: 2px solid #00FF1E;
+    border-radius: 30px;
+}
+
+img{
+    text-align: center;
+    width: 11vw;
+    min-width: 100px;
+    padding: 2%;
+    filter: drop-shadow(10px 10px 10px #00FF1E) grayscale(100%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    z-index: 2;
+}
+
+#van-Gogh{
+    width: 9vw;
+    min-width: 100px;
+}
+
+.image-title {
+    position: absolute;
+    bottom: -5vh;
+    left: 0vw;
+    right: 0vw;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-family:"DM Mono", cursive;
+    color:  #00FF1E;
+    text-shadow: #0015ff 1px 1px 1px;
+    padding: 10px;
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+a:hover img{
+    filter: drop-shadow(5px 5px 5px #00FF1E) grayscale(0%);
+    transform: scale(1.1);
+}
+
+a:hover .imgup{
+    position: relative;
+    filter: drop-shadow(5px 5px 5px #00FF1E) grayscale(0%);
+    transform: scale(1.1);
+    z-index: 3;
+}
+
+a:hover .image-title {
+    display: block;
+    opacity: 1;
+    z-index: 4;
+}
+
+div.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 18vw;
+    margin-top: 1%;
+}
+
+.right h3{
+    font-family:"DM Mono", cursive;
+    color: #00FF1E;
+    font-size: 1vw;
+    padding: 1%;
+    margin-top: 10%;
+    text-align: left;
+    border: 3px solid #00FF1E;
+    background-color: white;
+    display: inline-block;
+    line-height: 100%;
+    border-radius: 20px;
+}
+
+.right h3:hover{
+    color:  #0015ff;
+    border: 3px solid #0015ff;
+}
+
+div.title{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+div.title p{
+    clear: both;
+    font-size: 0.65vw;
+    color: #00FF1E;
+    font-family:"DM Mono", cursive;
+    padding: 0.5%;
+    border: 2px solid #00FF1E;
+    background-color: white;
+    display: block;
+    line-height: 100%;
+    border-radius: 20px;
+}
+
+div.title p:hover{
+    font-size: 0.65vw;
+    color: #0015ff;
+    border: 2px solid #0015ff;
+    font-family:"DM Mono", cursive;
+    padding: 0.5%;
+}
+
+.dm-mono-regular {
+    font-family: "DM Mono", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: row;
+    max-width: 60%;
+}
+
+.full-image {
+    display: flex;
+    height: 40vh;
+    width: auto;
+    margin-right: 10%;
+    padding: 0;
+    border-radius: 4px;
+    filter: grayscale(0%);
+    box-shadow: 0px 4px 15px  #00FF1E;
+}
+
+.full-image:hover {
+    cursor: url("img/mouse.png"), auto;
+}
+
+.modal-content-text {
+    height: 40vh;
+    margin-left: 2%;
+    padding-left: 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 4px 15px  #00FF1E;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.modal-content-text h3{
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #00FF1E;
+    text-shadow: #0015ff 1px 1px 1px;
+    font-size: 1.5vw;
+    padding: 0.5%;
+}
+
+.modal-content-text p{
+    width: 75%;
+    font-family:"DM Mono", cursive;
+    color: #1100FF;
+    font-size: 0.7vw;
+    padding: 0.5%;
+}
+
+.modalLink img{
+    width: 2vw;
+    min-width: 6px;
+    filter: drop-shadow(1px 1px 1px #0015ff) grayscale(0%);
+    margin: 0;
+    padding: 0;
+}
+
+.modal-overlay.description-only-style .modal-content-text {
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.modal-overlay.description-only-style .modal-content-text p {
+    color: #0015ff;
+    font-style: italic;
+    font-size: 1vw;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.modal-overlay.description-only-style .modal-content-img {
+    display: none;
+}
+
+.modal-overlay.description-only-style #modalTitle,
+.modal-overlay.description-only-style .modalLink {
+    display: none;
+}
+
+
+
